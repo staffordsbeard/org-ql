@@ -265,7 +265,7 @@ single predicate)."
       (mapc #'org-ql--ensure-buffer buffers-files)
       (let* ((completion-styles '(org-ql-completing-read))
              (completion-styles-alist (list (list 'org-ql-completing-read #'try #'all "Org QL Find")))
-             (selected (completing-read prompt #'collection nil t)))
+             (selected (completing-read prompt #'collection nil nil)))
         ;; (debug-message "SELECTED:%S  KEYS:%S" selected (hash-table-keys table))
         (or (gethash selected table)
             ;; If there are completions in the table, but none of them exactly match the user input
